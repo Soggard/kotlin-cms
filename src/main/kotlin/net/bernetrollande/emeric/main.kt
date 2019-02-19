@@ -7,6 +7,7 @@ import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import java.sql.Connection
 import java.sql.DriverManager
 
 
@@ -16,8 +17,8 @@ fun main() {
             get("/") {
                 //call.respondText("<h1>It's alive ! It's alive !", ContentType.Text.Html)
 
-                val connection = DriverManager.getConnection("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
-                val stmt = connection.prepareStatement("SELECT * FROM article")
+                val connection = databaseConnection()
+                val stmt = connection!!.prepareStatement("SELECT * FROM article")
                 val results = stmt.executeQuery()
 
                 val str = buildString {
@@ -34,10 +35,10 @@ fun main() {
             get("/article/{id}") {
                 //call.respondText("<h1>It's alive ! It's alive !", ContentType.Text.Html)
 
-                val connection = DriverManager.getConnection("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
+                val connection = databaseConnection()
                 val id = call.parameters["id"]
 
-                val s = connection.prepareStatement("SELECT * FROM article WHERE id = ?")
+                val s = connection!!.prepareStatement("SELECT * FROM article WHERE id = ?")
                 s.setString(1, id)
 
                 val results = s.executeQuery()
@@ -57,6 +58,8 @@ fun main() {
         }
     }.start(true)
 }
-/*
 
- */
+fun databaseConnection(): Connection? {
+    return DriverManager.getConnection("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
+
+}
