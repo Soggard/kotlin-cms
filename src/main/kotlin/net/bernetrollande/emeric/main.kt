@@ -16,17 +16,42 @@ fun main() {
             get("/") {
                 //call.respondText("<h1>It's alive ! It's alive !", ContentType.Text.Html)
 
-                val connection = DriverManager.getConnection("jdbc:mysql://localhost/cms", "root", "")
-                val stmt = connection.prepareStatement("SELECT * FROM articles")
+                val connection = DriverManager.getConnection("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
+                val stmt = connection.prepareStatement("SELECT * FROM article")
                 val results = stmt.executeQuery()
 
-                var str = buildString {
+                val str = buildString {
                     while (results.next()) {
                         val id = results.getInt("id")
                         val title = results.getString("title")
-                        append("<p><a href=\"/$id\">$title</a></p>")
+                        append("<p><a href=\"/article/$id\">$title</a></p>")
                     }
                 }
+                call.respondText(str, ContentType.Text.Html)
+
+            }
+
+            get("/article/{id}") {
+                //call.respondText("<h1>It's alive ! It's alive !", ContentType.Text.Html)
+
+                val connection = DriverManager.getConnection("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
+                val id = call.parameters["id"]
+
+                val s = connection.prepareStatement("SELECT * FROM article WHERE id = ?")
+                s.setString(1, id)
+
+                val results = s.executeQuery()
+
+                val str = buildString {
+                    while (results.next()) {
+                        val id = results.getInt("id")
+                        val title = results.getString("title")
+                        val text = results.getString("text")
+                        append("<h1>$title</h1><p>$text</p>")
+                    }
+                }
+
+                call.respondText(str, ContentType.Text.Html)
 
             }
         }
@@ -34,6 +59,4 @@ fun main() {
 }
 /*
 
-                val s = connection.prepareStatement("SELECT * FROM articles WHERE id = ?")
-                s.setInt(1, id)
  */
