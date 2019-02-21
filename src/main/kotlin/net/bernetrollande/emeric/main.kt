@@ -15,6 +15,8 @@ import io.ktor.server.netty.Netty
 fun main() {
 
     val model = MysqlModel()
+    val articleListController = ArticleListController(model)
+    val articleController = ArticleController(model)
 
     embeddedServer(Netty, 8080) {
 
@@ -24,19 +26,14 @@ fun main() {
 
         routing {
             get("/") {
-                val articles = model.getArticleList()
-                call.respond(FreeMarkerContent("index.ftl", mapOf("articles" to articles), "e"))
+                val content = articleListController.startFM()
+                call.respond(content)
             }
 
             get("/article/{id}") {
                 val id = call.parameters["id"]!!.toInt()
-                val article = model.getArticle(id)
-
-                if (article != null) {
-                    call.respond(FreeMarkerContent("article.ftl", mapOf("article" to article), "e"))
-                } else {
-                    call.respond(HttpStatusCode.NotFound)
-                }
+                val content = articleController.startFM(id)
+                call.respond(content)
             }
         }
     }.start(true)
