@@ -12,8 +12,6 @@ import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 
-class App
-
 fun main() {
     embeddedServer(Netty, 8080) {
 
