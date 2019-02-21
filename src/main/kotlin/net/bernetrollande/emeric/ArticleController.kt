@@ -11,7 +11,7 @@ class ArticleController(private val model: MysqlModel) {
     fun startFM (id: Int): Any {
         val article = model.getArticle(id)
         if (article != null)
-            return FreeMarkerContent("article.ftl", article)
+            return FreeMarkerContent("article.ftl", mapOf("article" to article), "e")
         return HttpStatusCode.NotFound
     }
 }

@@ -10,15 +10,13 @@ class MysqlModel {
     val connectionPool = ConnectionPool("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
 
     fun getArticleList(): List<Article> {
-
         val articles = ArrayList<Article>()
 
         connectionPool.use { connection ->
             connection.prepareStatement("SELECT * FROM article").use { stmt ->
                 val results = stmt.executeQuery()
-
                 while (results.next()) {
-                    articles += Article(results.getString("id").toInt(), results.getString("title"))
+                    articles += Article(results.getInt("id"), results.getString("title"))
                 }
             }
         }
