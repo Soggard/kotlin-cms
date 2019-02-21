@@ -1,15 +1,10 @@
 package net.bernetrollande.emeric
 
-import io.ktor.application.call
-import io.ktor.freemarker.FreeMarkerContent
-import io.ktor.http.HttpStatusCode
-import io.ktor.response.respond
+class MysqlModel : Model {
 
-class MysqlModel {
+    override val connectionPool = ConnectionPool("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
 
-    val connectionPool = ConnectionPool("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
-
-    fun getArticleList(): List<Article> {
+    override fun getArticleList(): List<Article> {
         val articles = ArrayList<Article>()
 
         connectionPool.use { connection ->
@@ -23,7 +18,7 @@ class MysqlModel {
         return articles
     }
 
-    fun getArticle(id: Int): Article? {
+    override fun getArticle(id: Int): Article? {
 
         connectionPool.use { connection ->
             connection.prepareStatement("SELECT id, title, text FROM article WHERE id = ?").use { stmt ->
