@@ -2,6 +2,8 @@ package net.bernetrollande.emeric
 
 class TestModel : Model {
 
+    // SIMULATION DU MODEL
+
     override fun getArticleList(): List<Article> {
         val articles = ArrayList<Article>()
         articles += Article(1, "Article 1")
@@ -12,7 +14,6 @@ class TestModel : Model {
     }
 
     override fun getArticle(id: Int): Article? {
-
         if (id == 1)
             return Article(1, "Article 1")
         return null

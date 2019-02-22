@@ -38,7 +38,7 @@ fun Application.cmsApp(
 
 fun main() {
 
-    val model = MysqlModel()
+    val model = MysqlModel("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
     val articleListController = ArticleListControllerImpl(model)
     val articleController = ArticleControllerImpl(model)
 

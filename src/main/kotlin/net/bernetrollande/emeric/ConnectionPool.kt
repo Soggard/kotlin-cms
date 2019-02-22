@@ -5,14 +5,12 @@ import java.sql.DriverManager
 import java.util.*
 import java.util.concurrent.ConcurrentLinkedQueue
 
-class ConnectionPool(val url: String, val user: String, val password: String) {
+class ConnectionPool(val url: String, val user: String?, val password: String?) {
     val list = ConcurrentLinkedQueue<Connection>()
 
     fun  getConnection(): Connection {
         return list.poll()
-            ?: DriverManager.getConnection(url,
-                user,
-                password)
+            ?: DriverManager.getConnection(url, user, password)
     }
 
     fun makeAvailable(connection: Connection) {
