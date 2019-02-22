@@ -2,7 +2,7 @@ package net.bernetrollande.emeric
 
 class MysqlModel : Model {
 
-    override val connectionPool = ConnectionPool("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
+    private val connectionPool = ConnectionPool("jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "")
 
     override fun getArticleList(): List<Article> {
         val articles = ArrayList<Article>()

@@ -2,12 +2,6 @@ package net.bernetrollande.emeric
 
 class TestModel : Model {
 
-    override val connectionPool = ConnectionPool(
-        "jdbc:mysql://localhost/cms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-        "root",
-        ""
-    )
-
     override fun getArticleList(): List<Article> {
         val articles = ArrayList<Article>()
         articles += Article(1, "Article 1")
