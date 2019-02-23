@@ -19,13 +19,7 @@ Importer les tables depuis le répertoire "sql"
 
 ###TODO :
 
-Création d'articles
-
-Edition d'article
-
 Suppression d'article
-
-Administration
 
 Création de commentaires
 
@@ -38,7 +32,5 @@ Password hash
 Tests controllers
 
 Tests models
-
-Déconnexion
 
 Créer le SQL d'initialisation

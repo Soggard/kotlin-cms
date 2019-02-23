@@ -36,24 +36,10 @@ fun Application.cmsApp(
         templateLoader = ClassTemplateLoader(App::class.java.classLoader, "templates")
     }
 
+    // Installation du système de session
     install(Sessions) {
         cookie<UserSession>("user")
     }
-
-    // Installation du système d'authentifiation
-    // Documentation : https://ktor.io/servers/features/authentication.html
-    /*install(Authentication) {
-        basic(name = "bigboss") {
-            realm = "CMS"
-            validate { credentials ->
-                if (credentials.name == credentials.password) {
-                    UserIdPrincipal(credentials.name)
-                } else {
-                    null
-                }
-            }
-        }
-    }*/
 
     routing {
 
