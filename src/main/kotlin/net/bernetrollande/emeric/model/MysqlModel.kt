@@ -75,4 +75,16 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
             }
         }
     }
+
+    // Création d'article
+    override fun editArticle(article: Article) {
+        connectionPool.use { connection ->
+            connection.prepareStatement("UPDATE article SET title = ?, text = ? WHERE article.id = ?;").use { stmt ->
+                stmt.setString(1, article.title)
+                stmt.setString(2, article.text)
+                stmt.setString(3, article.id.toString())
+                stmt.executeUpdate()
+            }
+        }
+    }
 }

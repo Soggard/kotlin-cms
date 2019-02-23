@@ -30,11 +30,4 @@ class NewArticleController(private val model: Model) {
         } else
             return "/new?error=1"
     }
-
-/*
-    // Déconnexion : Renvoie le lien de redirection
-    fun disconnectAction (context: ApplicationCall): String {
-        context.sessions.set("user", null)
-        return "/"
-    }*/
 }

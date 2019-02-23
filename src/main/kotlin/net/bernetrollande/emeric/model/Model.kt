@@ -5,4 +5,5 @@ interface Model {
     fun getArticle(id: Int): Article?
     fun getUser(login: String?, password: String?): User?
     fun createArticle(article: Article)
+    fun editArticle(article: Article)
 }

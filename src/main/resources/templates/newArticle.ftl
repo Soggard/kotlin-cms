@@ -14,7 +14,7 @@
         <p>
             <label>
                 Contenu
-                <textarea name="title"></textarea>
+                <textarea name="text"></textarea>
             </label>
         </p>
         <input type="submit" value="Créer l'article">

@@ -27,7 +27,8 @@ fun Application.cmsApp(
     articleListController: ArticleListController,
     articleController: ArticleController,
     userController: UserController,
-    newArticleController: NewArticleController
+    newArticleController: NewArticleController,
+    editArticleController: EditArticleController
 ) {
 
     // Installation du moteur de template
@@ -101,6 +102,21 @@ fun Application.cmsApp(
             val content = newArticleController.newArticleAction(title, text, context)
             call.respondRedirect(content)
         }
+
+        // Edition d'un article
+        get("/edit/{id}") {
+            val id = call.parameters["id"]!!.toInt()
+            val content = editArticleController.editArticlePage(id, context)
+            call.respond(content)
+        }
+        post("/edit") {
+            val params = call.receive< Parameters >()
+            val id = params["id"]!!.toInt()
+            val title = params["title"]
+            val text = params["text"]
+            val content = editArticleController.editArticleAction(id, title, text, context)
+            call.respondRedirect(content)
+        }
     }
 
 }
@@ -117,6 +133,7 @@ fun main() {
     val articleController = ArticleControllerImpl(model)
     val userController = UserController(model)
     val newArticleController = NewArticleController(model)
+    val editArticleController = EditArticleController(model)
 
-    embeddedServer(Netty, 8080) {cmsApp(articleListController, articleController, userController, newArticleController)}.start(true)
+    embeddedServer(Netty, 8080) {cmsApp(articleListController, articleController, userController, newArticleController, editArticleController)}.start(true)
 }
