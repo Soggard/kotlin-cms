@@ -103,6 +103,13 @@ fun Application.cmsApp(
             val content = editArticleController.editArticleAction(id, title, text, context)
             call.respondRedirect(content)
         }
+
+        // Suppression d'un article
+        get("/delete/{id}") {
+            val id = call.parameters["id"]!!.toInt()
+            val content = articleController.deleteArticle(id, context)
+            call.respondRedirect(content)
+        }
     }
 
 }

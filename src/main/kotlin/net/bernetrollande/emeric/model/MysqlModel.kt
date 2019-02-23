@@ -82,7 +82,18 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
             connection.prepareStatement("UPDATE article SET title = ?, text = ? WHERE article.id = ?;").use { stmt ->
                 stmt.setString(1, article.title)
                 stmt.setString(2, article.text)
-                stmt.setString(3, article.id.toString())
+                stmt.setInt(3, article.id)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
+    // Suppression d'article
+    override fun deleteArticle(id: Int) {
+
+        connectionPool.use { connection ->
+            connection.prepareStatement("DELETE FROM article WHERE article.id = ?;").use { stmt ->
+                stmt.setInt(1, id)
                 stmt.executeUpdate()
             }
         }
