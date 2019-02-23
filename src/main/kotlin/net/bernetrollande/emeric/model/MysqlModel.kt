@@ -41,6 +41,26 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
         return null
     }
 
+    // Récupérer les commentaires d'un article
+    override fun getCommentsByArticle(article: Int): List<Comment> {
+        val comments = ArrayList<Comment>()
+
+        connectionPool.use { connection ->
+            connection.prepareStatement("SELECT * FROM comment WHERE comment.article = ?;").use { stmt ->
+                stmt.setInt(1, article)
+                val results = stmt.executeQuery()
+                while (results.next()) {
+                    comments += Comment(
+                        results.getInt("id"),
+                        results.getInt("article"),
+                        results.getString("text")
+                    )
+                }
+            }
+        }
+        return comments
+    }
+
 
     // Connexion
     override fun getUser(login: String?, password: String?): User? {
@@ -71,12 +91,13 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
             connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);").use { stmt ->
                 stmt.setString(1, article.title)
                 stmt.setString(2, article.text)
-                stmt.executeQuery()
+                println(stmt)
+                stmt.executeUpdate()
             }
         }
     }
 
-    // Création d'article
+    // Edition d'article
     override fun editArticle(article: Article) {
         connectionPool.use { connection ->
             connection.prepareStatement("UPDATE article SET title = ?, text = ? WHERE article.id = ?;").use { stmt ->
@@ -93,6 +114,29 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
 
         connectionPool.use { connection ->
             connection.prepareStatement("DELETE FROM article WHERE article.id = ?;").use { stmt ->
+                stmt.setInt(1, id)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
+    // Création de commentaire
+    override fun createComment(comment: Comment) {
+
+        connectionPool.use { connection ->
+            connection.prepareStatement("INSERT INTO `comment` (`id`, `article`, `text`) VALUES (NULL, ?, ?);").use { stmt ->
+                stmt.setInt(1, comment.article)
+                stmt.setString(2, comment.text)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
+    // Suppression d'un commentaire
+    override fun deleteComment(id: Int) {
+
+        connectionPool.use { connection ->
+            connection.prepareStatement("DELETE FROM comment WHERE comment.id = ?;").use { stmt ->
                 stmt.setInt(1, id)
                 stmt.executeUpdate()
             }

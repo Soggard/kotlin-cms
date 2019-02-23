@@ -36,3 +36,5 @@ Tests controllers
 Tests models
 
 Créer le SQL d'initialisation
+
+Redirection après suppression ou édition d'un objet

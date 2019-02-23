@@ -21,13 +21,14 @@ class NewArticleController(private val model: Model) {
     // Action de création d'article
     fun newArticleAction (title: String?, text: String?, context: ApplicationCall): String {
 
-        if (context.sessions.get("user") != null) {
+        if (context.sessions.get("user") == null) {
             return "/"
         } else if (title != null && text != null) {
             val article = Article(0, title, text)
             model.createArticle(article)
             return "/"
         } else
+            // Si toutes les informations ne sont pas renseignées
             return "/new?error=1"
     }
 }

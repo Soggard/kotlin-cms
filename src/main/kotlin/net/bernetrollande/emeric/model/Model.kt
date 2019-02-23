@@ -7,4 +7,7 @@ interface Model {
     fun createArticle(article: Article)
     fun editArticle(article: Article)
     fun deleteArticle(id: Int)
+    fun createComment(comment: Comment)
+    fun deleteComment(id: Int)
+    fun getCommentsByArticle(article: Int): List<Comment>
 }

@@ -5,6 +5,7 @@ import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.client.features.HttpRedirect
+import io.ktor.features.ForwardedHeaderSupport
 import io.ktor.freemarker.FreeMarker
 import io.ktor.http.HttpStatusCode
 import io.ktor.response.respond
@@ -28,7 +29,8 @@ fun Application.cmsApp(
     articleController: ArticleController,
     userController: UserController,
     newArticleController: NewArticleController,
-    editArticleController: EditArticleController
+    editArticleController: EditArticleController,
+    commentController: CommentController
 ) {
 
     // Installation du moteur de template
@@ -40,6 +42,8 @@ fun Application.cmsApp(
     install(Sessions) {
         cookie<UserSession>("user")
     }
+
+    install(ForwardedHeaderSupport)
 
     routing {
 
@@ -110,6 +114,21 @@ fun Application.cmsApp(
             val content = articleController.deleteArticle(id, context)
             call.respondRedirect(content)
         }
+
+        // Création et suppression de commentaires
+        post("/comment/create") {
+            val params = call.receive< Parameters >()
+            val article = params["article"]!!.toInt()
+            val text = params["text"]!!
+            val content = commentController.createComment(article, text, context)
+            call.respondRedirect(content)
+        }
+        get("/comment/delete/{id}") {
+            val id = call.parameters["id"]!!.toInt()
+            val content = commentController.deleteComment(id, context)
+            call.respondRedirect(content)
+        }
+
     }
 
 }
@@ -127,6 +146,7 @@ fun main() {
     val userController = UserController(model)
     val newArticleController = NewArticleController(model)
     val editArticleController = EditArticleController(model)
+    val commentController = CommentController(model)
 
-    embeddedServer(Netty, 8080) {cmsApp(articleListController, articleController, userController, newArticleController, editArticleController)}.start(true)
+    embeddedServer(Netty, 8080) {cmsApp(articleListController, articleController, userController, newArticleController, editArticleController, commentController)}.start(true)
 }
