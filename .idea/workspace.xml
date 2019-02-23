@@ -2,23 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70599d0b-99b3-4f9a-9626-32648c051879" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/Article.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/ArticleControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/ArticleControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/ArticleListControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/ArticleListControllerImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/IndexData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/IndexData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$cmsApp$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MainKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MysqlModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/net/bernetrollande/emeric/MysqlModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/ArticleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/ArticleTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/AticleListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/AticleListTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/TestModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/TestModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ConnectionPool.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ConnectionPool.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/MysqlModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/MysqlModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ArticleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ArticleTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/TestModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/TestModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/META-INF/net.bernetrollande.emeric.cms-server.main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/ArticleTest$testExistingArticle$model$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/ArticleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/AticleListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/ModelTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/net/bernetrollande/emeric/TestModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -39,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+            <state relative-caret-position="561">
+              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding>
                 <element signature="e#35#389#0" expanded="true" />
               </folding>
@@ -51,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ArticleControllerImpl.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="187">
               <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding>
                 <element signature="e#35#177#0" expanded="true" />
@@ -64,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/AticleListTest.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding>
                 <element signature="e#35#130#0" expanded="true" />
               </folding>
@@ -73,10 +82,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="238">
+                <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="21" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ArticleTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="129">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#35#320#0" expanded="true" />
               </folding>
@@ -87,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ModelTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="102">
               <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
               <folding>
                 <element signature="e#35#145#0" expanded="true" />
@@ -105,7 +144,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ConnectionPool.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -148,7 +187,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/kotlin/main.tk.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/IndexData.kt" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/App.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/MysqlModel.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/Article.kt" />
@@ -168,6 +206,9 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ArticleTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/AticleListTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/TestModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -183,72 +224,52 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin-cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin-cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin-cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin-cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="emeric" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin-cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cms-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cms" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="emeric" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550833566147" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550919554669" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -276,7 +297,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ModelTest">
+  <component name="RunManager" selected="Kotlin.net.bernetrollande.emeric.MainKt">
     <configuration name="ArticleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="net.bernetrollande.emeric.cms-server.test" />
       <extension name="coverage">
@@ -288,22 +309,6 @@
       <option name="PACKAGE_NAME" value="net.bernetrollande.emeric" />
       <option name="MAIN_CLASS_NAME" value="net.bernetrollande.emeric.ArticleTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArticleTest.testExistingArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="net.bernetrollande.emeric.cms-server.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.bernetrollande.emeric.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="net.bernetrollande.emeric" />
-      <option name="MAIN_CLASS_NAME" value="net.bernetrollande.emeric.ArticleTest" />
-      <option name="METHOD_NAME" value="testExistingArticle" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -354,13 +359,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="net.bernetrollande.emeric.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="net.bernetrollande.emeric.cms-server.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="net.bernetrollande.emeric.MainKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.net.bernetrollande.emeric.MainKt" />
         <item itemvalue="JUnit.ModelTest" />
         <item itemvalue="JUnit.ArticleTest" />
         <item itemvalue="JUnit.AticleListTest" />
         <item itemvalue="JUnit.ArticleTest.testFakeArticle" />
-        <item itemvalue="JUnit.ArticleTest.testExistingArticle" />
       </list>
     </recent_temporary>
   </component>
@@ -379,6 +397,7 @@
       <workItem from="1550591913802" duration="2034000" />
       <workItem from="1550736455670" duration="10642000" />
       <workItem from="1550822809382" duration="10439000" />
+      <workItem from="1550916404464" duration="2585000" />
     </task>
     <servers />
   </component>
@@ -415,13 +434,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40333000" />
+    <option name="totallyTimeSpent" value="42918000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23825504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24093817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -430,13 +449,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33569404" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3347779" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3045326" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
@@ -459,20 +478,8 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/main.tk.kt" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-core/1.1.2/5d53356b1e76ed66b808580997457c50d1f0b227/ktor-server-core-1.1.2-sources.jar!/jvmMain/io/ktor/response/ApplicationResponseFunctions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/sql/DriverManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="235" column="29" selection-start-line="235" selection-start-column="29" selection-end-line="235" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-core/1.1.2/5d53356b1e76ed66b808580997457c50d1f0b227/ktor-server-core-1.1.2-sources.jar!/jvmMain/io/ktor/response/ApplicationResponseFunctions.kt" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/sql/DriverManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/App.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -480,20 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.28/b9e763fd0149515ec3b19cc7025385e7a177bdb0/freemarker-2.3.28-sources.jar!/freemarker/cache/ClassTemplateLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="98" column="11" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.28/b9e763fd0149515ec3b19cc7025385e7a177bdb0/freemarker-2.3.28-sources.jar!/freemarker/cache/ClassTemplateLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/MysqlModel.java" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/Article.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -538,20 +532,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-jvm/1.1.2/ea5ca4621665f9efbf9892f2114ccaa03be7ce98/ktor-http-jvm-1.1.2-sources.jar!/commonMain/io/ktor/http/HttpStatusCode.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ArticleListTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-jvm/1.1.2/ea5ca4621665f9efbf9892f2114ccaa03be7ce98/ktor-http-jvm-1.1.2-sources.jar!/commonMain/io/ktor/http/HttpStatusCode.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ArticleListTest.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/Model.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -566,9 +548,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/MysqlModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ArticleControllerImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="187">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="e#35#177#0" expanded="true" />
@@ -576,29 +565,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ArticleTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#35#320#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/AticleListTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="e#35#130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ModelTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="102">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding>
             <element signature="e#35#145#0" expanded="true" />
@@ -613,23 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-          <folding>
-            <element signature="e#35#389#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/MysqlModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/ConnectionPool.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -637,6 +589,60 @@
           <folding>
             <element signature="e#35#160#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/net/bernetrollande/emeric/main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="e#35#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/ArticleTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#35#320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/net/bernetrollande/emeric/AticleListTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#35#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="238">
+            <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
         </state>
       </provider>
     </entry>

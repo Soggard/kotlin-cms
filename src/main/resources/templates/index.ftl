@@ -7,6 +7,8 @@
 <h1>Mes articles</h1>
 
 <#list articles as article>
-    <a href="/article/${article.id}">${article.title}</a>
+    <p>
+        <a href="/article/${article.id}">${article.title}</a>
+    </p>
 </#list>
 </html>
