@@ -63,12 +63,11 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
 
 
     // Connexion
-    override fun getUser(login: String?, password: String?): User? {
+    override fun getUser(login: String?): User? {
 
         connectionPool.use { connection ->
-            connection.prepareStatement("SELECT id, login FROM user WHERE login = ? AND password = ?").use { stmt ->
+            connection.prepareStatement("SELECT id, login, password FROM user WHERE login = ?").use { stmt ->
                 stmt.setString(1, login)
-                stmt.setString(2, password)
                 val result = stmt.executeQuery()
                 val found = result.next()
 
@@ -76,7 +75,7 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
                     return User(
                         result.getInt("id"),
                         result.getString("login"),
-                        ""
+                        result.getString("password")
                     )
                 }
             }
@@ -112,6 +111,7 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
     // Suppression d'article
     override fun deleteArticle(id: Int) {
 
+        // Suppression de l'article et de ses commentaires
         connectionPool.use { connection ->
             connection.prepareStatement("DELETE FROM article WHERE article.id = ?;").use { stmt ->
                 stmt.setInt(1, id)

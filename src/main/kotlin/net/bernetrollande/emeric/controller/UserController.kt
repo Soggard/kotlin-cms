@@ -5,6 +5,9 @@ import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.sessions.sessions
 import net.bernetrollande.emeric.UserSession
 import net.bernetrollande.emeric.model.Model
+import org.mindrot.jbcrypt.BCrypt
+
+
 
 class UserController(private val model: Model) {
 
@@ -14,11 +17,16 @@ class UserController(private val model: Model) {
 
     // Connexion : Renvoie le lien de redirection
     fun loginAction (login: String?, password: String?, context: ApplicationCall): String {
-        val user = model.getUser(login, password)
+        val user = model.getUser(login)
         if (user != null) {
-            val userSession = UserSession(user.login, user.id)
-            context.sessions.set("user", userSession)
-            return "/"
+
+            if (BCrypt.checkpw(password, user.password)) {
+                println("connexion")
+                val userSession = UserSession(user.login, user.id)
+                context.sessions.set("user", userSession)
+                return "/"
+            }
+
         }
         return "/login?error=1"
     }

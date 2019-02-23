@@ -12,10 +12,16 @@
 <#if !session??>
     <p><a href="/login">Connexion</a></p>
 </#if>
+<#if session??>
+    <p><a href="/new">Publier un nouvel article</a></p>
+</#if>
 
 <#list articles as article>
     <p>
         <a href="/article/${article.id}">${article.title}</a>
+        <#if session??>
+            (<a href="/delete/${article.id}">Supprimer l'article</a>)
+        </#if>
     </p>
 </#list>
 </html>

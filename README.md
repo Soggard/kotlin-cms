@@ -19,14 +19,6 @@ Importer les tables depuis le répertoire "sql"
 
 ###TODO :
 
-Création des liens
-
-Suppression d'article
-
-Création de commentaires
-
-Suppression de commentaires
-
 CSS
 
 Password hash
