@@ -6,6 +6,7 @@ import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.client.features.HttpRedirect
 import io.ktor.freemarker.FreeMarker
+import io.ktor.http.HttpStatusCode
 import io.ktor.response.respond
 import io.ktor.response.respondText
 import io.ktor.routing.get
@@ -25,7 +26,8 @@ import net.bernetrollande.emeric.model.MysqlModel
 fun Application.cmsApp(
     articleListController: ArticleListController,
     articleController: ArticleController,
-    userController: UserController
+    userController: UserController,
+    newArticleController: NewArticleController
 ) {
 
     // Installation du moteur de template
@@ -67,14 +69,12 @@ fun Application.cmsApp(
             call.respond(content)
         }
 
-        // Page de connexion
+        // Connexion
         get("/login") {
             val content = userController.loginPage()
             // TODO : Gérer le cas d'un message d'erreur
             call.respond(content)
         }
-
-        // Action de déconnexion
         post("/login") {
             val params = call.receive< Parameters >()
             val login = params["login"]
@@ -90,9 +90,16 @@ fun Application.cmsApp(
         }
 
         // Création d'un article
-        get("/") {
-            val content = articleListController.startFM(context)
+        get("/new") {
+            val content = newArticleController.newArticlePage(context)
             call.respond(content)
+        }
+        post("/new") {
+            val params = call.receive< Parameters >()
+            val title = params["title"]
+            val text = params["text"]
+            val content = newArticleController.newArticleAction(title, text, context)
+            call.respondRedirect(content)
         }
     }
 
@@ -109,6 +116,7 @@ fun main() {
     val articleListController = ArticleListControllerImpl(model)
     val articleController = ArticleControllerImpl(model)
     val userController = UserController(model)
+    val newArticleController = NewArticleController(model)
 
-    embeddedServer(Netty, 8080) {cmsApp(articleListController, articleController, userController)}.start(true)
+    embeddedServer(Netty, 8080) {cmsApp(articleListController, articleController, userController, newArticleController)}.start(true)
 }

@@ -1,14 +1,10 @@
 package net.bernetrollande.emeric.controller
 
-import io.ktor.freemarker.FreeMarkerContent
-import io.ktor.application.Application
 import io.ktor.application.ApplicationCall
-import io.ktor.application.call
-import io.ktor.http.HttpStatusCode
+import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.sessions.sessions
 import net.bernetrollande.emeric.UserSession
 import net.bernetrollande.emeric.model.Model
-import java.security.AccessControlContext
 
 class UserController(private val model: Model) {
 

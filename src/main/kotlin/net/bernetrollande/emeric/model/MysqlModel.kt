@@ -63,4 +63,16 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
         }
         return null
     }
+
+    // Création d'article
+    override fun createArticle(article: Article) {
+
+        connectionPool.use { connection ->
+            connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);").use { stmt ->
+                stmt.setString(1, article.title)
+                stmt.setString(2, article.text)
+                stmt.executeQuery()
+            }
+        }
+    }
 }
