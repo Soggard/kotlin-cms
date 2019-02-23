@@ -1,12 +1,12 @@
-package net.bernetrollande.emeric
+package net.bernetrollande.emeric.controller
 
-import io.ktor.application.call
 import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.http.HttpStatusCode
-import io.ktor.response.respond
+import net.bernetrollande.emeric.model.Model
 
 
-class ArticleControllerImpl(private val model: Model) : ArticleController {
+class ArticleControllerImpl(private val model: Model) :
+    ArticleController {
 
     override fun startFM (id: Int): Any {
         val article = model.getArticle(id)

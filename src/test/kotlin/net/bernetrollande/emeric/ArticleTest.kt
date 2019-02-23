@@ -1,10 +1,12 @@
 package net.bernetrollande.emeric
 
-import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.http.HttpStatusCode
+import net.bernetrollande.emeric.controller.ArticleControllerImpl
+import net.bernetrollande.emeric.model.Article
+import net.bernetrollande.emeric.model.Model
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

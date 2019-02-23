@@ -1,5 +1,8 @@
 package net.bernetrollande.emeric
 
+import net.bernetrollande.emeric.model.Article
+import net.bernetrollande.emeric.model.Model
+
 class TestModel : Model {
 
     // SIMULATION DU MODEL

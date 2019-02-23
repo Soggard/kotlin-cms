@@ -1,9 +1,11 @@
-package net.bernetrollande.emeric
+package net.bernetrollande.emeric.controller
 
 import io.ktor.freemarker.FreeMarkerContent
+import net.bernetrollande.emeric.model.Model
 
 
-class ArticleListControllerImpl(private val model: Model) : ArticleListController {
+class ArticleListControllerImpl(private val model: Model) :
+    ArticleListController {
 
     override fun startFM (): Any {
         val articles = model.getArticleList()

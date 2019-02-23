@@ -1,4 +1,4 @@
-package net.bernetrollande.emeric
+package net.bernetrollande.emeric.model
 
 import java.sql.Connection
 import java.sql.DriverManager

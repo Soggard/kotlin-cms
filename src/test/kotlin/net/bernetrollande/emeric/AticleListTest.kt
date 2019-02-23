@@ -1,6 +1,7 @@
 package net.bernetrollande.emeric
 
 import io.ktor.freemarker.FreeMarkerContent
+import net.bernetrollande.emeric.controller.ArticleListControllerImpl
 import org.junit.Test
 import kotlin.test.assertTrue
 
