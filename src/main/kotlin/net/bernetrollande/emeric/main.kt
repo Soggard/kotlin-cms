@@ -54,20 +54,13 @@ fun Application.cmsApp(
 
     routing {
 
-        /*authenticate("myauth1") {
-            get("/authenticated/route1") {
-                    // ...
-            }
-            get("/other/route2") {
-                    // ...
-            }
-        }*/
-
+        // Index, liste des articles
         get("/") {
             val content = articleListController.startFM(context)
             call.respond(content)
         }
 
+        // Affichage d'un article
         get("/article/{id}") {
             val id = call.parameters["id"]!!.toInt()
             val content = articleController.startFM(id, context)
@@ -77,24 +70,29 @@ fun Application.cmsApp(
         // Page de connexion
         get("/login") {
             val content = userController.loginPage()
+            // TODO : Gérer le cas d'un message d'erreur
             call.respond(content)
         }
 
         // Action de déconnexion
         post("/login") {
             val params = call.receive< Parameters >()
-            // TODO : prévoir le cas où les identifiants ne sont pas renseignés
-            val login = params["login"]!!
-            val password = params["password"]!!
+            val login = params["login"]
+            val password = params["password"]
             val content = userController.loginAction(login, password, context)
             call.respondRedirect(content)
         }
 
         // Lien de déconnexion
         get("/disconnect") {
-            println("Disconnecting")
             val content = userController.disconnectAction(context)
-            call.respondRedirect("/")
+            call.respondRedirect(content)
+        }
+
+        // Création d'un article
+        get("/") {
+            val content = articleListController.startFM(context)
+            call.respond(content)
         }
     }
 

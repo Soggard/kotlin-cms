@@ -43,7 +43,7 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
 
 
     // Connexion
-    override fun getUser(login: String, password: String): User? {
+    override fun getUser(login: String?, password: String?): User? {
 
         connectionPool.use { connection ->
             connection.prepareStatement("SELECT id, login FROM user WHERE login = ? AND password = ?").use { stmt ->
