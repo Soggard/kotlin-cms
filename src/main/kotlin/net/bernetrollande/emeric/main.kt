@@ -4,6 +4,7 @@ import freemarker.cache.ClassTemplateLoader
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
+import io.ktor.client.features.HttpRedirect
 import io.ktor.freemarker.FreeMarker
 import io.ktor.response.respond
 import io.ktor.response.respondText
@@ -14,6 +15,7 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.http.Parameters
 import io.ktor.request.receive
+import io.ktor.response.respondRedirect
 import io.ktor.sessions.Sessions
 import io.ktor.sessions.cookie
 import io.ktor.sessions.sessions
@@ -81,14 +83,18 @@ fun Application.cmsApp(
         // Action de déconnexion
         post("/login") {
             val params = call.receive< Parameters >()
+            // TODO : prévoir le cas où les identifiants ne sont pas renseignés
             val login = params["login"]!!
             val password = params["password"]!!
             val content = userController.loginAction(login, password, context)
+            call.respondRedirect(content)
+        }
 
-            print(call.sessions.get("user"))
-            // Todo : Rediriger vers la page "/"
-            call.respondText("Hello " + login)
-            //call.respond(content)
+        // Lien de déconnexion
+        get("/disconnect") {
+            println("Disconnecting")
+            val content = userController.disconnectAction(context)
+            call.respondRedirect("/")
         }
     }
 

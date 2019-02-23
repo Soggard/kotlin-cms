@@ -16,15 +16,20 @@ class UserController(private val model: Model) {
         return FreeMarkerContent("login.ftl", null, "e")
     }
 
-    fun loginAction (login: String, password: String, context: ApplicationCall): Any {
-        println(login+ password)
+    // Login : Renvoie le lien de la redirection
+    fun loginAction (login: String, password: String, context: ApplicationCall): String {
         val user = model.getUser(login, password)
         if (user != null) {
             val userSession = UserSession(user.login, user.id)
             context.sessions.set("user", userSession)
-            return FreeMarkerContent("index.ftl", null, "e")
+            return "/"
         }
         // TODO : Rediriger vers la page de connexion avec un message d'erreur
-        return FreeMarkerContent("login.ftl", null, "e")
+        return "/login"
+    }
+
+    fun disconnectAction (context: ApplicationCall): Any {
+        context.sessions.set("user", null)
+        return FreeMarkerContent("index.ftl", null, "e")
     }
 }
