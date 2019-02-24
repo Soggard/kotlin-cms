@@ -16,6 +16,8 @@ import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.http.Parameters
+import io.ktor.http.content.files
+import io.ktor.http.content.static
 import io.ktor.request.receive
 import io.ktor.response.respondRedirect
 import io.ktor.sessions.Sessions
@@ -47,6 +49,10 @@ fun Application.cmsApp(
 
     routing {
 
+        static("static") {
+            files("static")
+        }
+
         // Index, liste des articles
         get("/") {
             val content = articleListController.startFM(context)
@@ -62,7 +68,7 @@ fun Application.cmsApp(
 
         // Connexion
         get("/login") {
-            val content = userController.loginPage()
+            val content = userController.loginPage(context)
             // TODO : Gérer le cas d'un message d'erreur
             call.respond(content)
         }

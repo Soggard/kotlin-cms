@@ -13,7 +13,6 @@ class ArticleListControllerImpl(private val model: Model) :
 
     override fun startFM (context: ApplicationCall): Any {
         val articles = model.getArticleList()
-        //call.respond(FreeMarkerContent("index.ftl", mapOf("articles" to articles), "e"))
         return FreeMarkerContent("index.ftl", mapOf( "articles" to articles, "session" to context.sessions.get<UserSession>() ), "e")
     }
 }

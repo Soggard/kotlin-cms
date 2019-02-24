@@ -19,10 +19,6 @@ Importer les tables depuis le répertoire "sql"
 
 ###TODO :
 
-CSS
-
-Password hash
-
 Tests controllers
 
 Tests models

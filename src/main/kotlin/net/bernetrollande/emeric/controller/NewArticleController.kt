@@ -3,6 +3,7 @@ package net.bernetrollande.emeric.controller
 import io.ktor.application.ApplicationCall
 import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.http.HttpStatusCode
+import io.ktor.sessions.get
 import io.ktor.sessions.sessions
 import net.bernetrollande.emeric.UserSession
 import net.bernetrollande.emeric.model.Article
@@ -13,7 +14,7 @@ class NewArticleController(private val model: Model) {
     // Page de création d'article
     fun newArticlePage (context: ApplicationCall): Any {
         if (context.sessions.get("user") != null)
-            return FreeMarkerContent("newArticle.ftl", null, "e")
+            return FreeMarkerContent("newArticle.ftl", mapOf("session" to context.sessions.get<UserSession>()), "e")
         else
             return HttpStatusCode.Forbidden
 }

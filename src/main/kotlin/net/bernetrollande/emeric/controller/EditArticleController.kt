@@ -3,7 +3,9 @@ package net.bernetrollande.emeric.controller
 import io.ktor.application.ApplicationCall
 import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.http.HttpStatusCode
+import io.ktor.sessions.get
 import io.ktor.sessions.sessions
+import net.bernetrollande.emeric.UserSession
 import net.bernetrollande.emeric.model.Article
 import net.bernetrollande.emeric.model.Model
 
@@ -14,7 +16,7 @@ class EditArticleController(private val model: Model) {
         if (context.sessions.get("user") != null) {
             val article = model.getArticle(id)
             if (article != null)
-                return FreeMarkerContent("editArticle.ftl", mapOf("article" to article), "e")
+                return FreeMarkerContent("editArticle.ftl", mapOf("article" to article, "session" to context.sessions.get<UserSession>()), "e")
             return HttpStatusCode.NotFound
         }
         else
