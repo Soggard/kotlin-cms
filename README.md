@@ -6,7 +6,7 @@ Démarrer un serveur MySQL.
 
 Créer une base "cms".
 
-Importer les tables depuis le répertoire "sql"
+Importer la base de données grâce au fichier dans le répertoire "sql"
 
 ###Démarrer le serveur :
 
@@ -22,7 +22,5 @@ Importer les tables depuis le répertoire "sql"
 Tests controllers
 
 Tests models
-
-Créer le SQL d'initialisation
 
 Redirection après suppression ou édition d'un objet
