@@ -10,7 +10,7 @@ class AticleListTest {
     @Test
     fun testArticleList() {
         val model = TestModel()
-        val result = ArticleListControllerImpl(model).startFM()
+        val result = ArticleListControllerImpl(model).startFM(FakeSessionProvider())
         assertTrue(result is FreeMarkerContent)
 
     }

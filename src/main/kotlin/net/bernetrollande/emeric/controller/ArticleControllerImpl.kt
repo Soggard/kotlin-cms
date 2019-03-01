@@ -22,9 +22,13 @@ class ArticleControllerImpl(private val model: Model) :
         return HttpStatusCode.NotFound
     }
 
-    override fun deleteArticle(id: Int, sessionProvider: SessionProvider): String {
-        if (sessionProvider.getSession() != null)
-            model.deleteArticle(id)
+    override fun deleteArticle(id: Int, sessionProvider: SessionProvider): Any {
+        println("Delete article")
+        println(sessionProvider.getSession())
+        if (sessionProvider.getSession() == null)
+            return HttpStatusCode.Forbidden
+        model.deleteArticle(id)
         return "/"
+
     }
 }

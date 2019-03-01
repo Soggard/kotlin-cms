@@ -117,7 +117,10 @@ fun Application.cmsApp(
         get("/delete/{id}") {
             val id = call.parameters["id"]!!.toInt()
             val content = articleController.deleteArticle(id, KtorSessionProvider(call))
-            call.respondRedirect(content)
+            if (content is String)
+                call.respondRedirect(content)
+            else
+                call.respond(content)
         }
 
         // Création et suppression de commentaires
