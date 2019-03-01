@@ -147,8 +147,8 @@ fun main() {
     val articleListController = ArticleListControllerImpl(model)
     val articleController = ArticleControllerImpl(model)
     val userController = UserController(model)
-    val newArticleController = NewArticleController(model)
-    val editArticleController = EditArticleController(model)
+    val newArticleController = NewArticleControllerImpl(model)
+    val editArticleController = EditArticleControllerImpl(model)
     val commentController = CommentControllerImpl(model)
 
     embeddedServer(Netty, 8080) {
