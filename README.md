@@ -24,3 +24,7 @@ Tests controllers
 Tests models
 
 Redirection après suppression ou édition d'un objet
+
+Réparer le bug de connexion après la publication d'un commentaire
+
+Supprimer les println()

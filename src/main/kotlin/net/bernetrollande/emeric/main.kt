@@ -52,20 +52,22 @@ fun Application.cmsApp(
 
         // Index, liste des articles
         get("/") {
-            val content = articleListController.startFM(context)
+            val content = articleListController.startFM(KtorSessionProvider(call))
             call.respond(content)
         }
 
         // Affichage d'un article
         get("/article/{id}") {
+            println("Display article")
+            println(KtorSessionProvider(call).getSession())
             val id = call.parameters["id"]!!.toInt()
-            val content = articleController.startFM(id, context)
+            val content = articleController.startFM(id, KtorSessionProvider(call))
             call.respond(content)
         }
 
         // Connexion
         get("/login") {
-            val content = userController.loginPage(context)
+            val content = userController.loginPage(KtorSessionProvider(call))
             // TODO : Gérer le cas d'un message d'erreur
             call.respond(content)
         }
@@ -85,21 +87,21 @@ fun Application.cmsApp(
 
         // Création d'un article
         get("/new") {
-            val content = newArticleController.newArticlePage(context)
+            val content = newArticleController.newArticlePage(KtorSessionProvider(call))
             call.respond(content)
         }
         post("/new") {
             val params = call.receive<Parameters>()
             val title = params["title"]
             val text = params["text"]
-            val content = newArticleController.newArticleAction(title, text, context)
+            val content = newArticleController.newArticleAction(title, text, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
 
         // Edition d'un article
         get("/edit/{id}") {
             val id = call.parameters["id"]!!.toInt()
-            val content = editArticleController.editArticlePage(id, context)
+            val content = editArticleController.editArticlePage(id, KtorSessionProvider(call))
             call.respond(content)
         }
         post("/edit") {
@@ -107,14 +109,14 @@ fun Application.cmsApp(
             val id = params["id"]!!.toInt()
             val title = params["title"]
             val text = params["text"]
-            val content = editArticleController.editArticleAction(id, title, text, context)
+            val content = editArticleController.editArticleAction(id, title, text, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
 
         // Suppression d'un article
         get("/delete/{id}") {
             val id = call.parameters["id"]!!.toInt()
-            val content = articleController.deleteArticle(id, context)
+            val content = articleController.deleteArticle(id, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
 
@@ -123,12 +125,14 @@ fun Application.cmsApp(
             val params = call.receive<Parameters>()
             val article = params["article"]!!.toInt()
             val text = params["text"]!!
-            val content = commentController.createComment(article, text, context)
+            println("Create comment")
+            println(context.sessions.get("user"))
+            val content = commentController.createComment(article, text, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
         get("/comment/delete/{id}") {
             val id = call.parameters["id"]!!.toInt()
-            val content = commentController.deleteComment(id, context)
+            val content = commentController.deleteComment(id, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
 
@@ -146,7 +150,7 @@ fun main() {
     )
     val articleListController = ArticleListControllerImpl(model)
     val articleController = ArticleControllerImpl(model)
-    val userController = UserController(model)
+    val userController = UserControllerImpl(model)
     val newArticleController = NewArticleControllerImpl(model)
     val editArticleController = EditArticleControllerImpl(model)
     val commentController = CommentControllerImpl(model)

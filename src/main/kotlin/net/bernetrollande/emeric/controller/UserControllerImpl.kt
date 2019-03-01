@@ -5,6 +5,7 @@ import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.sessions.clear
 import io.ktor.sessions.get
 import io.ktor.sessions.sessions
+import net.bernetrollande.emeric.SessionProvider
 import net.bernetrollande.emeric.UserSession
 import net.bernetrollande.emeric.model.Model
 import org.mindrot.jbcrypt.BCrypt
@@ -12,8 +13,8 @@ import org.mindrot.jbcrypt.BCrypt
 
 class UserControllerImpl(private val model: Model) : UserController {
 
-    override fun loginPage(context: ApplicationCall): Any {
-        return FreeMarkerContent("login.ftl", mapOf("session" to context.sessions.get<UserSession>()), "e")
+    override fun loginPage(sessionProvider: SessionProvider): Any {
+        return FreeMarkerContent("login.ftl", mapOf("session" to sessionProvider.getSession()), "e")
     }
 
     // Connexion : Renvoie le lien de redirection

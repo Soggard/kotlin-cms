@@ -1,19 +1,22 @@
 package net.bernetrollande.emeric.controller
 
-import io.ktor.application.ApplicationCall
-import io.ktor.sessions.sessions
+import net.bernetrollande.emeric.SessionProvider
 import net.bernetrollande.emeric.model.Comment
 import net.bernetrollande.emeric.model.Model
 
 class CommentControllerImpl(private val model: Model) : CommentController {
 
-    override fun createComment (article: Int, text: String, context: ApplicationCall): String {
+    override fun createComment (article: Int, text: String, sessionProvider: SessionProvider): String {
         model.createComment(Comment(0, article, text))
+        println("Create comment")
+        println(sessionProvider.getSession())
         return "/"
     }
 
-    override fun deleteComment (id: Int, context: ApplicationCall): String {
-        if (context.sessions.get("user") != null) {
+    override fun deleteComment (id: Int, sessionProvider: SessionProvider): String {
+        println("Delete comment")
+        println(sessionProvider.getSession())
+        if (sessionProvider.getSession() != null) {
             model.deleteComment(id)
         }
 

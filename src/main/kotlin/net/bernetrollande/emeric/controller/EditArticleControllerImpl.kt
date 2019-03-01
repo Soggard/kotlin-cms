@@ -5,6 +5,7 @@ import io.ktor.freemarker.FreeMarkerContent
 import io.ktor.http.HttpStatusCode
 import io.ktor.sessions.get
 import io.ktor.sessions.sessions
+import net.bernetrollande.emeric.SessionProvider
 import net.bernetrollande.emeric.UserSession
 import net.bernetrollande.emeric.model.Article
 import net.bernetrollande.emeric.model.Model
@@ -12,11 +13,11 @@ import net.bernetrollande.emeric.model.Model
 class EditArticleControllerImpl(private val model: Model) : EditArticleController {
 
     // Page de création d'article
-    override fun editArticlePage (id: Int, context: ApplicationCall): Any {
-        if (context.sessions.get("user") != null) {
+    override fun editArticlePage (id: Int, sessionProvider: SessionProvider): Any {
+        if (sessionProvider.getSession() != null) {
             val article = model.getArticle(id)
             if (article != null)
-                return FreeMarkerContent("editArticle.ftl", mapOf("article" to article, "session" to context.sessions.get<UserSession>()), "e")
+                return FreeMarkerContent("editArticle.ftl", mapOf("article" to article, "session" to sessionProvider.getSession()), "e")
             return HttpStatusCode.NotFound
         }
         else
@@ -24,9 +25,9 @@ class EditArticleControllerImpl(private val model: Model) : EditArticleControlle
     }
 
     // Action de création d'article
-    override fun editArticleAction (id: Int, title: String?, text: String?, context: ApplicationCall): String {
+    override fun editArticleAction (id: Int, title: String?, text: String?, sessionProvider: SessionProvider): String {
 
-        if (context.sessions.get("user") == null)
+        if (sessionProvider.getSession() == null)
             return "/"
         else if (title != null && text != null) {
             val article = Article(id, title, text)

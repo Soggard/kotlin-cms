@@ -1,7 +1,7 @@
 package net.bernetrollande.emeric.controller
 
-import io.ktor.application.ApplicationCall
+import net.bernetrollande.emeric.SessionProvider
 
 interface ArticleListController {
-    fun startFM (context: ApplicationCall): Any
+    fun startFM (sessionProvider: SessionProvider): Any
 }
