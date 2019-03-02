@@ -19,7 +19,7 @@
                     </label>
                     <label>
                         Mot de passe
-                        <input type="text" name="password">
+                        <input type="password" name="password">
                     </label>
                     <input type="submit" value="Valider">
                 </form>
