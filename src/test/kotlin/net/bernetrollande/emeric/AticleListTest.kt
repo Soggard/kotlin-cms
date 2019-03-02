@@ -1,5 +1,6 @@
 package net.bernetrollande.emeric
 
+import io.ktor.application.ApplicationCall
 import io.ktor.freemarker.FreeMarkerContent
 import net.bernetrollande.emeric.controller.ArticleListControllerImpl
 import org.junit.Test

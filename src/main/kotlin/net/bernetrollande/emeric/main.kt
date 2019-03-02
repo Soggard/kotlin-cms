@@ -49,11 +49,12 @@ fun Application.cmsApp(
 
     routing {
 
+        // Fichiers statiques (CSS, JS)
         static("static") {
             files("static")
         }
 
-        // Index, liste des articles
+        // Page d'accueil, liste des articles
         get("/") {
             val content = articleListController.startFM(context)
             call.respond(content)
