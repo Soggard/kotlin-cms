@@ -12,7 +12,12 @@ class FakeModel : Model {
         return null
     }
 
-    override fun createArticle(article: Article) {}
+    override fun createArticle(article: Article): Int {
+        return if (article.title == "test")
+            1
+        else
+            0
+    }
 
     override fun editArticle(article: Article) {}
 

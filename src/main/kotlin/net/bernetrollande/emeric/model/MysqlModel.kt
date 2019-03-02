@@ -84,15 +84,17 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
     }
 
     // Création d'article
-    override fun createArticle(article: Article) {
+    override fun createArticle(article: Article) : Int {
 
         connectionPool.use { connection ->
-            connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);").use { stmt ->
+            connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);SELECT LAST_INSERT_ID() as id;").use { stmt ->
                 stmt.setString(1, article.title)
                 stmt.setString(2, article.text)
-                stmt.executeUpdate()
+                val result = stmt.executeUpdate()
+                return result
             }
         }
+        return 0
     }
 
     // Edition d'article

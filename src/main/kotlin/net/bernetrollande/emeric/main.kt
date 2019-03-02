@@ -39,6 +39,8 @@ fun Application.cmsApp(
     install(Sessions) {
         cookie<UserSession>("user") {
             cookie.path = "/"
+            //transform(SessionTransportTransformerDigest()) // sign the ID that travels to client
+            //cookie.duration = Duration.ofMinutes(30)
         }
     }
 
@@ -94,7 +96,10 @@ fun Application.cmsApp(
             val title = params["title"]
             val text = params["text"]
             val content = newArticleController.newArticleAction(title, text, KtorSessionProvider(call))
-            call.respondRedirect(content)
+            if (content is String)
+                call.respondRedirect(content)
+            else
+                call.respond(content)
         }
 
         // Edition d'un article

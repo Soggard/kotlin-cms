@@ -4,7 +4,7 @@ interface Model {
     fun getArticleList(): List<Article>
     fun getArticle(id: Int): Article?
     fun getUser(login: String?): User?
-    fun createArticle(article: Article)
+    fun createArticle(article: Article): Int
     fun editArticle(article: Article)
     fun deleteArticle(id: Int)
     fun createComment(comment: Comment)

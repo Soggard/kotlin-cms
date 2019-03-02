@@ -8,5 +8,5 @@ interface NewArticleController {
     fun newArticlePage (sessionProvider: SessionProvider): Any
 
     // Action de création d'article
-    fun newArticleAction (title: String?, text: String?, sessionProvider: SessionProvider): String
+    fun newArticleAction (title: String?, text: String?, sessionProvider: SessionProvider): Any
 }

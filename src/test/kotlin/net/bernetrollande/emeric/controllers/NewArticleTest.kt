@@ -32,21 +32,21 @@ class NewArticleTest {
     fun testNewArticleAction() {
         val model = FakeModel()
         val result = NewArticleControllerImpl(model).newArticleAction("test", "Lorem ipsum", FakeSessionProvider())
-        assertEquals("/", result) // Todo : susceptible d'être modifié si de meilleures redirections sont implémentées
+        assertEquals("/article/1", result) // Todo : susceptible d'être modifié si de meilleures redirections sont implémentées
     }
 
     @Test
     fun testNewArticleActionNoAdmin() {
         val model = FakeModel()
         val result = NewArticleControllerImpl(model).newArticleAction("test", "Lorem ipsum", FakeNoSessionProvider())
-        assertEquals("/", result) // Todo : susceptible d'être modifié si de meilleures redirections sont implémentées
+        assertEquals(HttpStatusCode.Forbidden, result)
     }
 
     // Création d'un article  invalide
     @Test
     fun testNewFakeArticleAction() {
         val model = FakeModel()
-        val result = NewArticleControllerImpl(model).newArticleAction("test", null, FakeSessionProvider())
+        val result = NewArticleControllerImpl(model).newArticleAction("test2", null, FakeSessionProvider())
         assertEquals("/new?error=1", result) // Todo : susceptible d'être modifié si de meilleures redirections sont implémentées
     }
 

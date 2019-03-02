@@ -21,14 +21,17 @@ class NewArticleControllerImpl(private val model: Model) : NewArticleController 
     }
 
     // Action de création d'article
-    override fun newArticleAction (title: String?, text: String?, sessionProvider: SessionProvider): String {
+    override fun newArticleAction (title: String?, text: String?, sessionProvider: SessionProvider): Any {
 
         if (sessionProvider.getSession() == null) {
-            return "/"
+            return HttpStatusCode.Forbidden
         } else if (title != null && text != null) {
             val article = Article(0, title, text)
-            model.createArticle(article)
-            return "/"
+            val createdArticle = model.createArticle(article)
+            return if (createdArticle > 0)
+                "/article/$createdArticle"
+            else
+                return "/new?error=1"
         } else
         // Si toutes les informations ne sont pas renseignées
             return "/new?error=1"
