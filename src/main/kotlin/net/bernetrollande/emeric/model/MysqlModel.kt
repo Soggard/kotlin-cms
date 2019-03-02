@@ -90,7 +90,6 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
             connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);").use { stmt ->
                 stmt.setString(1, article.title)
                 stmt.setString(2, article.text)
-                println(stmt)
                 stmt.executeUpdate()
             }
         }

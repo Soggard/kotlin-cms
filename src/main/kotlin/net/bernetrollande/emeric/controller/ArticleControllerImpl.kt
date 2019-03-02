@@ -23,8 +23,6 @@ class ArticleControllerImpl(private val model: Model) :
     }
 
     override fun deleteArticle(id: Int, sessionProvider: SessionProvider): Any {
-        println("Delete article")
-        println(sessionProvider.getSession())
         if (sessionProvider.getSession() == null)
             return HttpStatusCode.Forbidden
         model.deleteArticle(id)

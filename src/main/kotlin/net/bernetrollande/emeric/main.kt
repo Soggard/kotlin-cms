@@ -59,8 +59,6 @@ fun Application.cmsApp(
 
         // Affichage d'un article
         get("/article/{id}") {
-            println("Display article")
-            println(KtorSessionProvider(call).getSession())
             val id = call.parameters["id"]!!.toInt()
             val content = articleController.startFM(id, KtorSessionProvider(call))
             call.respond(content)
@@ -129,8 +127,6 @@ fun Application.cmsApp(
             val params = call.receive<Parameters>()
             val article = params["article"]!!.toInt()
             val text = params["text"]!!
-            println("Create comment")
-            println(context.sessions.get("user"))
             val content = commentController.createComment(article, text, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
