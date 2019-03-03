@@ -138,7 +138,10 @@ fun Application.cmsApp(
         get("/comment/delete/{id}") {
             val id = call.parameters["id"]!!.toInt()
             val content = commentController.deleteComment(id, KtorSessionProvider(call))
-            call.respondRedirect(content)
+            if (content is String)
+                call.respondRedirect(content)
+            else
+                call.respond(content)
         }
 
     }

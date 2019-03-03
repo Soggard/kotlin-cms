@@ -24,3 +24,5 @@ Redirection après suppression ou édition d'un objet
 Réparer le bug de connexion après la publication d'un commentaire
 
 Tests de UserController avec gestion des sessions
+
+Fix creation d'article et de commentaires

@@ -23,9 +23,13 @@ class FakeModel : Model {
 
     override fun deleteArticle(id: Int) {}
 
-    override fun createComment(comment: Comment) {}
+    override fun createComment(comment: Comment): Int {
+        return 1
+    }
 
-    override fun deleteComment(id: Int) {}
+    override fun deleteComment(id: Int): Int {
+        return 1
+    }
 
     override fun getCommentsByArticle(article: Int): List<Comment> {
         val comments = ArrayList<Comment>()

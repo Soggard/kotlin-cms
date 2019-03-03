@@ -1,5 +1,7 @@
 package net.bernetrollande.emeric.model
 
+import java.sql.Statement
+
 class MysqlModel(url: String, user: String?, password: String?) : Model {
 
     val connectionPool = ConnectionPool(url, user, password)
@@ -85,16 +87,18 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
 
     // Création d'article
     override fun createArticle(article: Article) : Int {
-
+        var returnedId = 0
         connectionPool.use { connection ->
-            connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);SELECT LAST_INSERT_ID() as id;").use { stmt ->
+            val result = connection.prepareStatement("INSERT INTO `article` (`id`, `title`, `text`) VALUES (NULL, ?, ?);", Statement.RETURN_GENERATED_KEYS).use { stmt ->
                 stmt.setString(1, article.title)
                 stmt.setString(2, article.text)
-                val result = stmt.executeUpdate()
-                return result
+                stmt.executeUpdate()
+                val generatedKeys = stmt.generatedKeys
+                if (generatedKeys.next())
+                    returnedId = generatedKeys.getInt(1)
             }
         }
-        return 0
+        return returnedId
     }
 
     // Edition d'article
@@ -122,7 +126,7 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
     }
 
     // Création de commentaire
-    override fun createComment(comment: Comment) {
+    override fun createComment(comment: Comment): Int {
 
         connectionPool.use { connection ->
             connection.prepareStatement("INSERT INTO `comment` (`id`, `article`, `text`) VALUES (NULL, ?, ?);").use { stmt ->
@@ -131,16 +135,25 @@ class MysqlModel(url: String, user: String?, password: String?) : Model {
                 stmt.executeUpdate()
             }
         }
+        return 0
     }
 
     // Suppression d'un commentaire
-    override fun deleteComment(id: Int) {
-
+    override fun deleteComment(id: Int): Int {
+        var returnedId = 0
         connectionPool.use { connection ->
+            connection.prepareStatement("SELECT article FROM comment WHERE comment.id = ?;").use { stmt ->
+                stmt.setInt(1, id)
+                val result = stmt.executeQuery()
+                if (result.next())
+                    returnedId = result.getInt("article")
+            }
             connection.prepareStatement("DELETE FROM comment WHERE comment.id = ?;").use { stmt ->
                 stmt.setInt(1, id)
                 stmt.executeUpdate()
             }
         }
+        // Renvoie le numéro de l'article s'il existe
+        return returnedId
     }
 }

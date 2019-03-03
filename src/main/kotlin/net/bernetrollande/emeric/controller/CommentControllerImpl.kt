@@ -1,5 +1,6 @@
 package net.bernetrollande.emeric.controller
 
+import io.ktor.http.HttpStatusCode
 import net.bernetrollande.emeric.SessionProvider
 import net.bernetrollande.emeric.model.Comment
 import net.bernetrollande.emeric.model.Model
@@ -11,12 +12,15 @@ class CommentControllerImpl(private val model: Model) : CommentController {
         return "/article/$article"
     }
 
-    override fun deleteComment (id: Int, sessionProvider: SessionProvider): String {
-        if (sessionProvider.getSession() != null) {
-            model.deleteComment(id)
-        }
+    override fun deleteComment (id: Int, sessionProvider: SessionProvider): Any {
+        if (sessionProvider.getSession() == null)
+            return HttpStatusCode.Forbidden
 
-        return "/"
+        val result = model.deleteComment(id)
+        return if (result > 0)
+            "/article/$result"
+        else
+            "/"
     }
 
 }
