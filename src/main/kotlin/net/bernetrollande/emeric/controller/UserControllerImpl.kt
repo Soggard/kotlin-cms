@@ -18,13 +18,13 @@ class UserControllerImpl(private val model: Model) : UserController {
     }
 
     // Connexion : Renvoie le lien de redirection
-    override fun loginAction(login: String?, password: String?, context: ApplicationCall): String {
+    override fun loginAction(login: String?, password: String?, sessionProvider: SessionProvider): String {
         val user = model.getUser(login)
         if (user != null) {
 
             if (BCrypt.checkpw(password, user.password)) {
                 val userSession = UserSession(user.login, user.id)
-                context.sessions.set("user", userSession)
+                sessionProvider.setSession(userSession)
                 return "/"
             }
 
@@ -33,8 +33,8 @@ class UserControllerImpl(private val model: Model) : UserController {
     }
 
     // Déconnexion : Renvoie le lien de redirection
-    override fun disconnectAction(context: ApplicationCall): String {
-        context.sessions.clear<UserSession>()
+    override fun disconnectAction(sessionProvider: SessionProvider): String {
+        sessionProvider.clearSession()
         return "/"
     }
 }

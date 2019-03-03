@@ -76,13 +76,13 @@ fun Application.cmsApp(
             val params = call.receive<Parameters>()
             val login = params["login"]
             val password = params["password"]
-            val content = userController.loginAction(login, password, context)
+            val content = userController.loginAction(login, password, KtorSessionProvider(call))
             call.respondRedirect(content)
         }
 
         // Lien de déconnexion
         get("/disconnect") {
-            val content = userController.disconnectAction(context)
+            val content = userController.disconnectAction(KtorSessionProvider(call))
             call.respondRedirect(content)
         }
 
