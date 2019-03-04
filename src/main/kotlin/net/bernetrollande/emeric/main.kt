@@ -128,7 +128,7 @@ fun Application.cmsApp(
         }
 
         // Création et suppression de commentaires
-        post("/comment/create") {
+        post("/create-comment") {
             val params = call.receive<Parameters>()
             val article = params["article"]!!.toInt()
             val text = params["text"]!!
