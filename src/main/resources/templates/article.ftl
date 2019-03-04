@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <label for="comment">Ecrire un commentaire</label>
-                <form action="/comment/create" method="post">
+                <form action="/create-comment" method="post">
                     <input type="hidden" name="article" value="${article.id}">
                     <textarea id="comment" name="text" cols="100" rows="5"></textarea> <br>
                     <input type="submit" value="Commenter" class="btn btn-info">
