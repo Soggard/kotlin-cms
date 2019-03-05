@@ -21,4 +21,4 @@ Accéder à la page localhost:8080/
 
 Tests models
 
-Réparer le bug de connexion après la publication d'un commentaire
+Sécuriser l'affichage des articles (injections de scripts)
